@@ -1,5 +1,5 @@
-function createTitle(bookIdea) {
-  return "The " + bookIdea
+function createTitle(book) {
+  return "The " + book
 }
 
 function buildMainCharacter(name, age, pronouns) {
@@ -17,22 +17,23 @@ function saveReview(reviewText, reviews) {
 }
 
 
-function calculatePageCount(bookTitle, bookPageCount) {
-  var bookPageCount = bookTitle.length  * 20
+function calculatePageCount(bookTitleParam) {
+  var bookPageCount = bookTitleParam.length  * 20
   return bookPageCount;
 }
 
-function writeBook(bookTitle, bookCharacter, genre) {
+function writeBook(bookTitleCreated, bookCharacter, genre) {
+  console.log('bookCharacter', bookCharacter)
   return book = {
-    title: bookTitle,
+    title: bookTitleCreated,
     mainCharacter: bookCharacter,
-    pageCount: bookTitle.length  * 20,
+    pageCount: calculatePageCount(bookTitleCreated),
     genre: genre,
   }
 }
 
-function editBook(book) {
-  book.pageCount = book.pageCount * .75
+function editBook(bookData) {
+  bookData.pageCount = bookData.pageCount * .75
 }
 
 
