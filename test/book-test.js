@@ -146,7 +146,6 @@ describe("book.js", function () {
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "mystery");
 
-console.log(ghoulBook);
 
       assert.equal(ghoulBook.pageCount, 340);
 

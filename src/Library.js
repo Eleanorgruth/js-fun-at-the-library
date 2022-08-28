@@ -30,10 +30,11 @@ var isOnShelf = false
       isOnShelf = true
     }
     }
-    return isOnShelf
-    ? `You have now checked out ${bookName} from the ${libraryLocation.name}`
-    : `Sorry, there are currently no copies of ${bookName} available at the ${libraryLocation.name}`
-
+    if (isOnShelf) {
+      return `You have now checked out ${bookName} from the ${libraryLocation.name}`
+    } else if (!isOnShelf) {
+      return `Sorry, there are currently no copies of ${bookName} available at the ${libraryLocation.name}`
+    }
   }
 
 
